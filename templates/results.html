@@ -9,19 +9,19 @@
 	<header>
 		<div class="container">
 		<div id="brandname">
-			<b>ML App: Healthy Cereal Predictor</b>
+			<b>Bike Ride sharing- number of casual rider prediction</b>
 		</div>
 		
 		
 	</div>
 	</header>
-	<p style="color:blue;font-size:15;"><b>*** Is My Cereal Healthy ?***</b></p>
+	<p style="color:blue;font-size:15;"><b>*** How many riders today?***</b></p>
 	<div class="results">
 	
-	{% if prediction == 1%}
-	<h3 style="color:green;">This is a healthy cereal</h3>
-	{% elif prediction == 0%}
-	<h3 style="color:red;">This is NOT a healthy cereal</h3>
+	{% if prediction >200%}
+	<h3 style="color:green;">More than 200</h3>
+	{% elif prediction <200%}
+	<h3 style="color:red;">Less than 200</h3>
 	{% endif %}
 
 	</div>
