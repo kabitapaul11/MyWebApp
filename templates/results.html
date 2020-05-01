@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<b>ML App: Healthy Cereal Predictor</b>
+		</div>
+		
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:15;"><b>*** Is My Cereal Healthy ?***</b></p>
+	<div class="results">
+	
+	{% if prediction == 1%}
+	<h3 style="color:green;">This is a healthy cereal</h3>
+	{% elif prediction == 0%}
+	<h3 style="color:red;">This is NOT a healthy cereal</h3>
+	{% endif %}
+
+	</div>
+    <a href="https://flask-gae-ml-autoscale-273601.uc.r.appspot.com/">Try another one.</a>
+
+</body>
+</html>

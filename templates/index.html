@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<b>ML App:Healthy Cereal Predictor</b>
+		</div>
+		
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Amount of calories(g) here: </p>
+		<!-- <input type="text" name="comment"/> -->
+		<!--<textarea name="comment" rows="4" cols="50"></textarea>-->
+        <input type="text" name="calories" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+		<br/>
+        <p>Enter Amount of fiber(g) here: </p>
+        <input type="text" name="fiber" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+        <br/>
+        <p>Enter Amount of sugars(g) here: </p>
+        <input type="text" name="sugars" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+        <br/>
+		<input type="submit" class="btn-info" value="predict">
+		
+	</form>
+		
+	</div>
+
+	
+	
+
+</body>
+</html>
