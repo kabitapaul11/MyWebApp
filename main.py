@@ -20,29 +20,27 @@ def predict():
     # We don't want to ask users to input values for all these values. so we will randomly generate values for some of the features.
     # the front end will ask users to input values for calories, fiber and sugar in grams for their cereal.
 
-    protein = random.uniform(1,5)
-    fat =  random.uniform(1,5)
-    sodium = random.uniform(0,5)
-    carbohydrates= random.uniform(1,30)
-    potassium = random.uniform(0,5)
-    vitamins = random.uniform(1,50)
+    mnth = random.uniform(1,12)
+    yr =  random.uniform(0,1)
+    weekday = random.uniform(0,6)
+    workingday= random.uniform(0,1)
 
     #dictionary for df1
-    dict_1 ={'protein':protein,'fat':fat,'sodium':sodium,'carbohydrates':carbohydrates,'potassium':potassium,'vitamins':vitamins}
+    dict_1 ={'mnth':mnth,'yr':yr,'weekday':weekday,'workingday':workingday}
 
     #add values to dataframe
     df1= pd.DataFrame(dict_1, index=[0])
 
 
     if request.method == 'POST':
-        calories = request.form['calories']
-        fiber = request.form['fiber']
-        sugars = request.form['sugars']
+        mnth = request.form['mnth']
+        yr = request.form['yr']
+        weekday = request.form['weekday']
 
-        dict_2 = {'calories':calories, 'fiber':fiber,'sugars':sugars }
+        dict_2 = {'mnth':mnth, 'yr':yr,'weekday':weekday }
         df2= pd.DataFrame(dict_2,index=[0])
         data = pd.concat([df2,df1], axis=1)
-        my_prediction = model.predict(data)
+        my_prediction = model.predict(df2)
     return render_template('results.html', prediction=my_prediction, comment='')
 
 
