@@ -18,4 +18,4 @@
 - you can view logs with this command $ gcloud app logs tail -s default 
 - Install Locust load testthrough cli command $ sudo python3 -m pip install locustio
 - Run locust load test $locust
-- Run Locoust in cli. command : $ locust -f locustfile.py --no-web --host https://flask-gae-ml-autoscale-273601.uc.r.appspot.com -c 10 -r 1
+- Run Locoust in cli. command : $ locust -f locustfile.py --no-web --host https://continuousdelivery-266922.appspot.com/ -c 10 -r 1
