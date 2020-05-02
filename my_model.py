@@ -9,17 +9,7 @@ import pickle
 # Load csv file.
 df_day = pd.read_csv('inputfile/day.csv')
 
-
-# create add_label function
-def add_label(df):
-    if df.calories <= 160 and df.fiber >=3 and df.sugars <=4:
-        return 1 # healthy cereal
-    else:
-        return 0 #not healthy cereal
-
-
-def predict(df)
-    
+def Predict_rider(df):    
     ### Number of casual riders
     X = df_day.drop(columns =['casual', 'registered', 'cnt','dteday','instant'])
     y = df_day[['casual']]
@@ -30,7 +20,7 @@ def predict(df)
     #fit training set to your LR model
     lnr = lnr.fit(X_train, y_train)
     #predict on the test set using your model
-    y_pred = lnr.predict(X_test)
+    y_pred = lnr.predict(df)
     # serialize model to disk
-    pickle.dump(lnr,open('outputfiles/rf_model.pk1','wb'))
-    return y_pred
+    pickle.dump(lnr, open('outputfiles/rf_model.pk1','wb'))
+    return int(y_pred[0][0])

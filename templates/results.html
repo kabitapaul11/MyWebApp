@@ -18,14 +18,10 @@
 	<p style="color:blue;font-size:15;"><b>*** How many riders today?***</b></p>
 	<div class="results">
 	
-	{% if prediction >200%}
-	<h3 style="color:green;">More than 200</h3>
-	{% elif prediction <200%}
-	<h3 style="color:red;">Less than 200</h3>
-	{% endif %}
+    <h4 style="color:green;">{%print(prediction)%}</h4>
 
 	</div>
-    <a href="https://flask-gae-ml-autoscale-273601.uc.r.appspot.com/">Try another one.</a>
+    <a href="https://continuousdelivery-266922.appspot.com/">Try another one.</a>
 
 </body>
 </html>
