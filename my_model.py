@@ -22,5 +22,5 @@ def Predict_rider(df):
     #predict on the test set using your model
     y_pred = lnr.predict(df)
     # serialize model to disk
-    pickle.dump(lnr, open('outputfiles/rf_model.pk1','wb'))
+    pickle.dump(lnr, open('outputfiles/linear_model.pk1','wb'))
     return int(y_pred[0][0])
